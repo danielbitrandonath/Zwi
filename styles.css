@@ -1,0 +1,339 @@
+/* Global Reset */
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #00FF00;
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  
+  /* LCD Scroller Container */
+  #lcd-container {
+    width: 100%;
+    background-color: #111;
+    border-bottom: 2px solid #00FF00;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .lcd-text-container {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 18px;
+    color: #00FF00;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .train-text {
+    display: inline-block;
+    animation: slideText 8s linear forwards;
+  }
+  
+  @keyframes slideText {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  
+  /* Main content wrapper */
+  #main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Clock */
+  #clock-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #clock {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    background-color: #000;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #00FF00;
+  }
+  
+  /* Video player section */
+  #video-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  #youtube-video {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+    margin-bottom: 10px;
+  }
+  
+  #reloadButton {
+    background-color: #00FF00;
+    color: #000;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #reloadButton:hover {
+    background-color: #0f0;
+  }
+  
+  /* News sidebar */
+  #news-sidebar {
+    flex: 1;
+    background-color: #111;
+    color: #00FF00;
+    padding: 20px;
+    border: 2px solid #00FF00;
+    border-radius: 10px;
+    height: fit-content;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  #news-sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  #news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #news-list li {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  
+  #news-list a {
+    color: #00FF00;
+    text-decoration: none;
+  }
+  
+  #news-list a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive for mobile */
+  @media (max-width: 768px) {
+    #main-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #news-sidebar {
+      margin-left: 0;
+      margin-top: 30px;
+      width: 90%;
+    }
+  
+    #youtube-video {
+      height: 200px;
+    }
+  
+    #clock {
+      font-size: 28px;
+    }
+  
+    .lcd-text-container {
+      font-size: 14px;
+    }
+  }
+
+  #music-player {
+    background-color: #111;
+    border: 2px solid #00FF00;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    color: #00FF00;
+    box-shadow: 0 0 20px #00FF00;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Press Start 2P', monospace;
+  }
+  
+  #player-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  #player-controls audio {
+    width: 280px;
+    background-color: black;
+  }
+  
+  #player-controls button {
+    background-color: #00FF00;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  #player-controls button:hover {
+    transform: scale(1.2);
+    background-color: #33ff33;
+  }
+  
+  #volumeControl {
+    width: 100px;
+    accent-color: #00FF00;
+  }
+  
+  #song-title {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  #music-player {
+    background-color: #111;
+    border: 2px solid #00FF00;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    color: #00FF00;
+    box-shadow: 0 0 20px #00FF00;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Press Start 2P', monospace;
+  }
+  
+  #player-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  #player-controls audio {
+    width: 280px;
+    background-color: black;
+  }
+  
+  #player-controls button {
+    background-color: #00FF00;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  #player-controls button:hover {
+    transform: scale(1.2);
+    background-color: #33ff33;
+  }
+  
+  #volumeControl {
+    width: 100px;
+    accent-color: #00FF00;
+  }
+  
+  #song-title {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+    
+
+  #vinyl-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  #vinyl {
+    width: 150px;
+    height: 150px;
+    background: url('vinyl.png') no-repeat center center / cover;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #00FF00;
+    animation: spin 3s linear infinite;
+    animation-play-state: paused;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  #vinyl.playing {
+    animation-play-state: running;
+  }
+  
+
+  @media (max-width: 600px) {
+    #music-player {
+      padding: 10px;
+    }
+  
+    #player-controls {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    #player-controls audio {
+      width: 100%;
+    }
+  
+    #vinyl {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
